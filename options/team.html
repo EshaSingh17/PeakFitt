@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness GUIDE</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Team Page Styling */
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom right, #1e1e2f, #3a3a5e);
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+    width: 18%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 18%;
+    text-align: center;
+    background: #4b0082;
+    border: 2px solid #ff00ff; /* Neon Pink Border */
+    box-shadow: 0 4px 10px rgba(255, 0, 255, 0.3); /* Pink Glow */
+    padding: 15px;
+    margin: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    width: 250px;
+    background-color: #2b2b4a;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #39ff14;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.member-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-icon.instagram {
+    background-color: #e1306c;
+}
+
+.social-icon.facebook {
+    background-color: #4267B2;
+}
+
+.social-icon.linkedin {
+    background-color: #0077B5;
+}
+
+.social-icon.gmail {
+    background-color: #D44638;
+}
+
+.social-icon:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 20, 147, 0.6);
+    transform: translateY(-10px);
+    border-color: #f06292;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.team-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #f06292;
+    margin-bottom: 20px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.member-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ddd;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    background: #ff1493; /* Hot Pink */
+}
+
+.social-links img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.team-member:hover .team-photo {
+    transform: scale(1.05);
+}
+
+.member-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #f06292;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.social-links {
+    
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.social-icon.instagram {
+    background-color: #e1306c;
+}
+
+.social-icon.facebook {
+    background-color: #4267B2;
+}
+
+.social-icon.linkedin {
+    background-color: #0077B5;
+}
+
+.social-icon.gmail {
+    background-color: #D44638;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .team-member {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="../image/logo1.png" alt="Logo">
+            </a>
+            
+        </div>
+        <ul class="nav-links">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="calculate.html">Calculate</a></li>
+                <li><a href="reach-out.html">Reach Out</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="Footer.html"></a></li>
+            </ul>
+        </ul>
+    </nav>
+    <!-- Team Section -->
+    <header>
+        <h1 class="neon-heading">Meet Our Team</h1>
+    </header>
+
+    <section class="team-container">
+        <div class="team-member">
+            <img src="../image/dolly.jpg" alt="Member 1" class="team-photo">
+            <h2 class="member-name">DOLLY KAPOOR</h2>
+            <div class="social-links">
+                <a href="https://instagram.com/johndoe" target="_blank" class="social-icon instagram"><img src="../image/insta.jpg" alt="Instagram" class="handles"></a>
+                <a href="https://facebook.com/johndoe" target="_blank" class="social-icon facebook"><img src="../image/fb.jpg" alt="Facebook" class="handles"></a>
+                <a href="https://linkedin.com/in/johndoe" target="_blank" class="social-icon linkedin"><img src="../image/linkedin.jpg" alt="LinkedIn" class="handles"></a>
+                <a href="mailto:johndoe@gmail.com" class="social-icon gmail"><img src="../image/gmail.jpg" alt="Gmail" class="handles"></a>
+            </div>
+        </div>
+
+        <div class="team-member">
+            <img src="../image/esha.jpg" alt="Member 2" class="team-photo">
+            <h2 class="member-name">ESHA SINGH</h2>
+            <div class="social-links">
+                <a href="https://instagram.com/janesmith" target="_blank" class="social-icon instagram"><img src="../image/insta.jpg" alt="Instagram" class="handles"></a>
+                <a href="https://facebook.com/janesmith" target="_blank" class="social-icon facebook"><img src="../image/fb.jpg" alt="Facebook" class="handles"></a>
+                <a href="https://linkedin.com/in/janesmith" target="_blank" class="social-icon linkedin"><img src="../image/linkedin.jpg" alt="LinkedIn" class="handles"></a>
+                <a href="mailto:janesmith@gmail.com" class="social-icon gmail"><img src="../image/gmail.jpg" alt="Gmail" class="handles"></a>
+            </div>
+        </div>
+
+        <div class="team-member">
+            <img src="../image/radha.webp" alt="Member 3" class="team-photo">
+            <h2 class="member-name">Radha</h2>
+            <div class="social-links">
+                <a href="https://instagram.com/michaellee" target="_blank" class="social-icon instagram"><img src="../image/insta.jpg" alt="Instagram" class="handles"></a>
+                <a href="https://facebook.com/michaellee" target="_blank" class="social-icon facebook"><img src="../image/fb.jpg" alt="Facebook" class="handles"></a>
+                <a href="https://linkedin.com/in/michaellee" target="_blank" class="social-icon linkedin"><img src="../image/linkedin.jpg" alt="LinkedIn" class="handles"></a>
+                <a href="mailto:michaellee@gmail.com" class="social-icon gmail"><img src="../image/gmail.jpg" alt="Gmail" class="handles"></a>
+            </div>
+        </div>
+
+        <div class="team-member">
+            <img src="../image/emily.webp" alt="Member 4" class="team-photo">
+            <h2 class="member-name">Emily Davis</h2>
+            <div class="social-links">
+                <a href="https://instagram.com/emilydavis" target="_blank" class="social-icon instagram"><img src="../image/insta.jpg" alt="Instagram" class="handles"></a>
+                <a href="https://facebook.com/emilydavis" target="_blank" class="social-icon facebook"><img src="../image/fb.jpg" alt="Facebook" class="handles"></a>
+                <a href="https://linkedin.com/in/emilydavis" target="_blank" class="social-icon linkedin"><img src="../image/linkedin.jpg" alt="LinkedIn" class="handles"></a>
+                <a href="mailto:emilydavis@gmail.com" class="social-icon gmail"><img src="../image/gmail.jpg" alt="Gmail" class="handles"></a>
+            </div>
+        </div>
+
+        <div class="team-member">
+            <img src="../image/chrisbrown.jpeg" alt="Member 5" class="team-photo">
+            <h2 class="member-name">Chris Brown</h2>
+            <div class="social-links">
+                <a href="https://instagram.com/chrisbrown" target="_blank" class="social-icon instagram"><img src="../image/insta.jpg" alt="Instagram" class="handles"></a>
+                <a href="https://facebook.com/chrisbrown" target="_blank" class="social-icon facebook"><img src="../image/fb.jpg" alt="Facebook" class="handles"></a>
+                <a href="https://linkedin.com/in/chrisbrown" target="_blank" class="social-icon linkedin"><img src="../image/linkedin.jpg" alt="LinkedIn" class="handles"></a>
+                <a href="mailto:chrisbrown@gmail.com" class="social-icon gmail"><img src="../image/gmail.jpg" alt="Gmail" class="handles"></a>
+            </div>
+        </div>
+    </section>
+<!-- end team Section -->
+</body>
+</html>

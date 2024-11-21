@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythic Pulse | Schedule</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+    --spiritual-color: #3c144a;
+    --physical-color: #e04f92;
+    --mental-color: #0f0f1e;
+    --background-color: linear-gradient(135deg, #0f0f1e, #3c144a);
+    --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--background-color);
+    line-height: 1.6;
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background: linear-gradient(135deg, var(--spiritual-color), var(--physical-color), var(--mental-color));
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e04f92;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.fitness-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.fitness-category {
+    background: #201026;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s;
+}
+
+.fitness-category:hover {
+    transform: scale(1.05);
+}
+
+.fitness-category h2 {
+    margin-bottom: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid;
+    color: #e04f92;
+}
+
+.bootcamp-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e04f92;
+    transition: background-color 0.3s ease;
+    color: lavender;
+}
+
+.bootcamp-item:hover {
+    background-color: rgba(224, 79, 146, 0.1);
+}
+
+.classes-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #201026;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.classes-table th {
+    background-color: #3c144a;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.classes-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e04f92;
+    color: lavender;
+}
+
+.btn {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-spiritual { background-color: #3c144a; color: white; }
+.btn-physical { background-color: #e04f92; color: white; }
+.btn-mental { background-color: #0f0f1e; color: white; }
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.personal-session-form {
+    background: #201026;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.personal-session-form form {
+    display: grid;
+    gap: 15px;
+}
+
+.personal-session-form input,
+.personal-session-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e04f92;
+    border-radius: 5px;
+    background-color: #3c144a;
+    color: white;
+}
+
+#bookedSessions {
+    margin-top: 20px;
+    background: #201026;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    color: lavender;
+}
+
+#sessionList {
+    list-style-type: none;
+}
+
+#sessionList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #3c144a;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="../image/logo1.png" alt="Logo">
+            </a>
+            
+        </div>
+        <ul class="nav-links">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="calculate.html">Calculate</a></li>
+                <li><a href="reach-out.html">Reach Out</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="Footer.html"></a></li>
+            </ul>
+        </ul>
+    </nav>
+    <!-- Schedule Section -->
+    <div class="container">
+        <div class="header">
+            <h1>Holistic Wellness | Mind, Body & Spirit</h1>
+        </div>
+
+        <div class="fitness-categories">
+            <div class="fitness-category spiritual">
+                <h2>Spiritual Fitness</h2>
+                <div id="spiritualBootcamps"></div>
+            </div>
+            <div class="fitness-category physical">
+                <h2>Physical Fitness</h2>
+                <div id="physicalBootcamps"></div>
+            </div>
+            <div class="fitness-category mental">
+                <h2>Mental Fitness</h2>
+                <div id="mentalBootcamps"></div>
+            </div>
+        </div>
+
+        <div class="personal-session-form">
+            <h2>Book Personalized Session</h2>
+            <form id="sessionForm">
+                <select id="fitnessCategory" required>
+                    <option value="">Select Fitness Category</option>
+                    <option value="spiritual">Spiritual Fitness</option>
+                    <option value="physical">Physical Fitness</option>
+                    <option value="mental">Mental Fitness</option>
+                </select>
+                <select id="sessionType" required>
+                    <option value="">Select Session Type</option>
+                </select>
+                <select id="preferredDay" required>
+                    <option value="">Select Day</option>
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                </select>
+                <input type="time" id="preferredTime" required>
+                <button type="button" class="btn btn-physical" onclick="bookSession()">Book Session</button>
+            </form>
+        </div>
+
+        <div class="classes-section">
+            <h2>Comprehensive Wellness Classes</h2>
+            <table class="classes-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Class</th>
+                        <th>Days</th>
+                        <th>Time</th>
+                        <th>Instructor</th>
+                    </tr>
+                </thead>
+                <tbody id="classSchedule"></tbody>
+            </table>
+        </div>
+
+        <div id="bookedSessions">
+            <h2>Your Booked Sessions</h2>
+            <ul id="sessionList"></ul>
+        </div>
+    </div>
+
+    <script>
+        const bootcamps = {
+            spiritual: [
+                { 
+                    name: 'Meditation Mastery', 
+                    description: 'Deep Spiritual Connection & Mindfulness',
+                    days: 'Mon/Wed/Fri', 
+                    time: '6:00 AM', 
+                    trainer: 'Sophia Zen',
+                    difficulty: 'All Levels'
+                },
+                { 
+                    name: 'Inner Peace Retreat', 
+                    description: 'Spiritual Awakening & Self-Discovery',
+                    days: 'Tue/Thu/Sat', 
+                    time: '7:00 AM', 
+                    trainer: 'David Harmony',
+                    difficulty: 'Beginner Friendly'
+                }
+            ],
+            physical: [
+                { 
+                    name: 'HIIT Extreme', 
+                    description: 'High-Intensity Interval Training',
+                    days: 'Mon/Wed/Fri', 
+                    time: '6:00 AM', 
+                    trainer: 'Mike Johnson',
+                    difficulty: 'Advanced'
+                },
+                { 
+                    name: 'Strength Warriors', 
+                    description: 'Complete Body Transformation',
+                    days: 'Tue/Thu/Sat', 
+                    time: '7:00 AM', 
+                    trainer: 'Sarah Williams',
+                    difficulty: 'Intermediate'
+                }
+            ],
+            mental: [
+                { 
+                    name: 'Stress Management', 
+                    description: 'Techniques for Mental Resilience',
+                    days: 'Mon/Wed/Fri', 
+                    time: '5:30 PM', 
+                    trainer: 'Emily Mindset',
+                    difficulty: 'All Levels'
+                },
+                { 
+                    name: 'Cognitive Fitness', 
+                    description: 'Brain Training & Mental Agility',
+                    days: 'Tue/Thu/Sat', 
+                    time: '6:30 PM', 
+                    trainer: 'Dr. Alex Brain',
+                    difficulty: 'Intermediate'
+                }
+            ]
+        };
+
+        const classes = [
+            { 
+                category: 'Spiritual',
+                name: 'Yoga Meditation', 
+                days: 'Mon/Wed/Fri', 
+                time: '9:00 AM', 
+                instructor: 'Emma Peaceful'
+            },
+            { 
+                category: 'Physical',
+                name: 'Power Yoga', 
+                days: 'Tue/Thu', 
+                time: '10:30 AM', 
+                instructor: 'Rachel Strong'
+            },
+            { 
+                category: 'Mental',
+                name: 'Mindfulness', 
+                days: 'Mon/Wed/Fri', 
+                time: '6:00 PM', 
+                instructor: 'Carlos Calm'
+            },
+            { 
+                category: 'Physical',
+                name: 'Spin Class', 
+                days: 'Tue/Thu', 
+                time: '7:00 PM', 
+                instructor: 'Tom Fitness'
+            },
+            { 
+                category: 'Spiritual',
+                name: 'Zen Workshop', 
+                days: 'Sat', 
+                time: '8:00 AM', 
+                instructor: 'Jessica Harmony'
+            }
+        ];
+
+        let personalSessions = [];
+
+        function renderBootcamps() {
+            const categories = ['spiritual', 'physical', 'mental'];
+            categories.forEach(category => {
+                const container = document.getElementById(`${category}Bootcamps`);
+                bootcamps[category].forEach((camp, index) => {
+                    const campDiv = document.createElement('div');
+                    campDiv.className = 'bootcamp-item';
+                    campDiv.innerHTML = `
+                        <div>
+                            <h3>${camp.name}</h3>
+                            <p>${camp.description}</p>
+                            <small>Days: ${camp.days} | Time: ${camp.time} | Trainer: ${camp.trainer}</small>
+                        </div>
+                        <button class="btn btn-${category}" onclick="selectBootcamp('${category}', ${index})">Select</button>
+                    `;
+                    container.appendChild(campDiv);
+                });
+            });
+        }
+
+        function renderClasses() {
+            const tbody = document.getElementById('classSchedule');
+            classes.forEach(cls => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${cls.category}</td>
+                    <td>${cls.name}</td>
+                    <td>${cls.days}</td>
+                    <td>${cls.time}</td>
+                    <td>${cls.instructor}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Dynamic session type population
+        document.getElementById('fitnessCategory').addEventListener('change', function() {
+            const sessionTypeSelect = document.getElementById('sessionType');
+            sessionTypeSelect.innerHTML = '<option value="">Select Session Type</option>';
+            
+            const sessionTypes = {
+                spiritual: ['Meditation', 'Yoga', 'Spiritual Counseling', 'Mindfulness'],
+                physical: ['Personal Training', 'Strength', 'Cardio', 'Flexibility'],
+                mental: ['Stress Management', 'Cognitive Training', 'Emotional Intelligence', 'Life Coaching']
+            };
+
+            const selectedCategory = this.value;
+            if (selectedCategory) {
+                sessionTypes[selectedCategory].forEach(type => {
+                    const option = document.createElement('option');
+                    option.value = type;
+                    option.textContent = type;
+                    sessionTypeSelect.appendChild(option);
+                });
+            }
+        });
+
+        function selectBootcamp(category, index) {
+            const selectedBootcamp = bootcamps[category][index];
+            alert(`You've selected: ${selectedBootcamp.name}`);
+        }
+
+        function bookSession() {
+            const fitnessCategory = document.getElementById('fitnessCategory').value;
+            const sessionType = document.getElementById('sessionType').value;
+            const preferredDay = document.getElementById('preferredDay').value;
+            const preferredTime = document.getElementById('preferredTime').value;
+
+            if (!fitnessCategory || !sessionType || !preferredDay || !preferredTime) {
+                alert('Please fill all fields');
+                return;
+            }
+
+            const session = {
+                category: fitnessCategory,
+                type: sessionType,
+                day: preferredDay,
+                time: preferredTime,
+                id: Date.now()
+            };
+
+            personalSessions.push(session);
+            updateSessionList();
+            document.getElementById('sessionForm').reset();
+        }
+
+        function updateSessionList() {
+            const sessionList = document.getElementById('sessionList');
+            sessionList.innerHTML = '';
+            personalSessions.forEach(session => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span>${session.category.toUpperCase()} - ${session.type} on ${session.day} at ${session.time}</span>
+                    <button class="btn btn-${session.category}" onclick="cancelSession(${session.id})">Cancel</button>
+                `;
+                sessionList.appendChild(li);
+            });
+        }
+
+        function cancelSession(id) {
+            personalSessions = personalSessions.filter(session => session.id !== id);
+            updateSessionList();
+        }
+
+        // Initialize schedules
+        renderBootcamps();
+        renderClasses();
+    </script>
+<!-- End Schedule Section-->
+</body>
+</html>

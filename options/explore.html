@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness GUIDE</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .explore-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .explore-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .explore-card {
+            background: #201026;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s;
+        }
+
+        .explore-card:hover {
+            transform: scale(1.05);
+        }
+
+        .explore-card h2 {
+            color: #e04f92;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e04f92;
+            padding-bottom: 10px;
+        }
+
+        .explore-card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .explore-card li {
+            margin-bottom: 10px;
+        }
+
+        .explore-card a {
+            color: lavender;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .explore-card a:hover {
+            color: #e04f92;
+        }
+
+        .section-header {
+            text-align: center;
+            color: #e04f92;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .video-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .video-link {
+            background-color: #e04f92;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .video-link:hover {
+            background-color: lavender;
+            color: black;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #3c144a;
+            border: 1px solid #e04f92;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="../image/logo1.png" alt="Logo">
+            </a>
+            
+        </div>
+        <ul class="nav-links">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="calculate.html">Calculate</a></li>
+                <li><a href="reach-out.html">Reach Out</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="Footer.html"></a></li>
+            </ul>
+        </ul>
+    </nav>
+    <div class="explore-section">
+        <h1 class="section-header">Let's Explore the Keys to a Healthy Lifestyle</h1>
+        
+        <input type="text" id="searchInput" placeholder="Search topics...">
+
+        <div class="explore-grid" id="exploreGrid">
+            <div class="explore-card" data-category="diet">
+                <h2>Healthy Diet to Follow</h2>
+                <div class="video-embed">
+                    <a href="https://youtube.com/playlist?list=PLfNW_1ECVaTgO7oyC6ngzf2f99n4ngqTA&si=NhLQRbW_n-l0n1HY">Diet</a>
+                </div>
+                <!--<div class="video-embed">
+                    <<a href="https://www.youtube.com/embed/1DIqWvgpBoA" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Discover key nutritional strategies for optimal health and wellness.</p>
+            </div>-->
+            
+            <div class="explore-card" data-category="recipes">
+                <h2> Quick Recipes</h2>
+                <div class="video-embed">
+                    <a href="https://www.youtube.com/live/jUdaMi5txy4?si=GGgX3oPwvZm6o_Rn">Quick Recipies</a>
+                </div>
+                <div class="video-embed">
+                    <a href="https://youtube.com/playlist?list=PLxnfP_LRoakF6Th1Z2k20STB1ufwslUQt&si=-b2z1-QC3ktKOVov" >Quick Salads</a>
+                </div>
+                <p>Quick, nutritious, and delicious meal ideas to support your fitness journey.</p>
+            </div>
+            
+            <div class="explore-card" data-category="nutrition">
+                <h2>Nutrition by Age & Gender</h2>
+                <div class="video-embed">
+                    <a href="https://youtube.com/playlist?list=PL5qo1Sl2GW3fwgRrOHPst7NOYNSQ4IylD&si=Vl9D-9TELT5cphi4">Female Guide</a>
+                </div>
+                <div class="video-embed">
+                    <a href="https://youtube.com/playlist?list=PL9uK6jbdzfVcA49bUGWCmg_CG5qVTp97_&si=ZFKPqToOq2SD73W2">Male Guide</a>
+                </div>
+                <div class="video-embed">
+                    <a href="https://youtube.com/playlist?list=PLiJgTZqSAolhsOMDAKjZImHfDyKHpq5yS&si=eq-IM3YyUoq-X8cq">Children Guide</a>
+                </div>
+                <p>Understanding how nutritional needs change throughout life stages.</p>
+            </div>
+            
+            <div class="explore-card" data-category="workouts">
+                <h2>Workouts</h2>
+                <ul>
+                    <li><a href="https://youtube.com/playlist?list=PLIn3nS9mJKxkOySSTG0OQXNA4duNQKYLK&si=yJ20pRR2nfMNzTm4">Full-Body Workouts</a></li>
+                    <li><a href="https://youtube.com/playlist?list=PL2NpXBzdtNakK6r3b9PP1G6pA_EIDtlMg&si=VJg_vfKxVcTLUtbU">HIIT Workouts</a></li>
+                    <li><a href="https://youtube.com/playlist?list=PL2ov72VWpiOpGxN4biXsJz9i9hBBgdeO4&si=IiRKMlqfH3OobcT5">Strength Training</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=dO4PTLKNiVQ">Yoga & Stretching</a></li>
+                </ul>
+            </div>
+            
+            <div class="explore-card" data-category="mental-health">
+                <h2>Stress Relief & Mental Health</h2>
+                <div class="video-embed">
+                    <a href="https://youtube.com/playlist?list=RD_BtXPQimVhg&playnext=1&si=y2lWN7oWMZgif1w8">Stress Relief Music</a>
+                </div>
+                <div class="video-embed">
+                    <a href="https://www.youtube.com/live/YB-nFu50R1M?si=JTuootVXfEvdDqQS">Reduce stress and anxiety</a>
+                </div>
+                </div>
+            
+                <a href="https://youtu.be/j0_0O-FmLtc?si=YDsgfNruhLMjuuLu">Techniques to manage stress, anxiety, and promote mental well-being.</a>
+            
+            </div>
+            
+            <div class="explore-card" data-category="spirituality">
+                <h2>Spiritual Connection</h2>
+                <div class="video-embed">
+                    <a href="https://youtu.be/Lq9tdpWKH0U?si=8TAY1VuYnXsyFfIe">Connection to Universe</a>
+                </div>
+                <div class="video-embed">
+                    <a href="https://youtu.be/LQbTJaGyoT0?si=hsMLPknc7sLbmpXN">Explore Universal Magic</a>
+                </div>
+                <p>Exploring the role of spiritual practices in holistic health.</p>
+            </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const exploreGrid = document.getElementById('exploreGrid');
+            const exploreCards = exploreGrid.querySelectorAll('.explore-card');
+
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.toLowerCase();
+
+                exploreCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    const cardText = card.textContent.toLowerCase();
+                    
+                    const isVisible = 
+                        cardText.includes(searchTerm) || 
+                        category.includes(searchTerm);
+
+                    card.style.display = isVisible ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

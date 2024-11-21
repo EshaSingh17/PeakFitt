@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness GUIDE</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .rating-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #201026;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .rating-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .rating-form input, 
+        .rating-form textarea,
+        .rating-form select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e04f92;
+            border-radius: 5px;
+            background-color: #3c144a;
+            color: white;
+        }
+
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .star {
+            font-size: 2rem;
+            cursor: pointer;
+            color: gray;
+            transition: color 0.3s ease;
+        }
+
+        .star.active {
+            color: #e04f92;
+        }
+
+        .submit-btn {
+            background-color: #e04f92;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: lavender;
+            color: black;
+        }
+
+        #thankYouMessage {
+            text-align: center;
+            color: #e04f92;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .change-suggestions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: lavender;
+        }
+
+        .checkbox-container input {
+            width: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="../image/logo1.png" alt="Logo">
+            </a>
+            
+        </div>
+        <ul class="nav-links">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="calculate.html">Calculate</a></li>
+                <li><a href="reach-out.html">Reach Out</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="Footer.html"></a></li>
+            </ul>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="header">
+            <h1>Rate Your Experience</h1>
+        </div>
+
+        <div class="rating-container">
+            <form id="feedbackForm" class="rating-form">
+                <input type="text" placeholder="Your Name" required>
+                
+                <div>
+                    <label>Your Rating:</label>
+                    <div class="star-rating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                </div>
+
+                <textarea placeholder="What did you like about our website? (Optional)" rows="4"></textarea>
+                
+                <select required>
+                    <option value="">Select What You Enjoyed Most</option>
+                    <option value="fitness-types">Fitness Types</option>
+                    <option value="video-section">Video Section</option>
+                    <option value="about-section">About Section</option>
+                    <option value="schedule">Class Schedule</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <div>
+                    <h3 style="color: #e04f92; margin-bottom: 10px;">Suggest Changes</h3>
+                    <div class="change-suggestions">
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="design" name="changes" value="design">
+                            <label for="design">Improve Website Design</label>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="content" name="changes" value="content">
+                            <label for="content">Add More Content/Classes</label>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="features" name="changes" value="features">
+                            <label for="features">Add New Website Features</label>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="navigation" name="changes" value="navigation">
+                            <label for="navigation">Improve Site Navigation</label>
+                        </div>
+                    </div>
+                </div>
+
+                <textarea placeholder="Detailed suggestions for changes (Optional)" rows="4"></textarea>
+
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+
+            <div id="thankYouMessage">
+                <h2>Thank You for Your Feedback!</h2>
+                <p>We appreciate your time and thoughts.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stars = document.querySelectorAll('.star');
+            let selectedRating = 0;
+
+            stars.forEach(star => {
+                star.addEventListener('mouseover', () => {
+                    const rating = star.getAttribute('data-rating');
+                    stars.forEach(s => {
+                        if (s.getAttribute('data-rating') <= rating) {
+                            s.classList.add('active');
+                        } else {
+                            s.classList.remove('active');
+                        }
+                    });
+                });
+
+                star.addEventListener('click', () => {
+                    selectedRating = star.getAttribute('data-rating');
+                });
+            });
+
+            document.querySelector('.star-rating').addEventListener('mouseout', () => {
+                stars.forEach(star => {
+                    if (star.getAttribute('data-rating') <= selectedRating) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            });
+
+            document.getElementById('feedbackForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Collect selected changes
+                const selectedChanges = Array.from(document.querySelectorAll('input[name="changes"]:checked'))
+                    .map(checkbox => checkbox.value);
+
+                // Here you would typically send the data to a server
+                // For this example, we'll just show a thank you message
+                document.querySelector('.rating-container form').style.display = 'none';
+                document.getElementById('thankYouMessage').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

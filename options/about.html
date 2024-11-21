@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness GUIDE</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-columns {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            gap: 20px;
+            background: linear-gradient(135deg, #0f0f1e, #3c144a);
+        }
+        .about-column {
+            width: 33%;
+            background: #201026;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .about-column:hover {
+            transform: scale(1.03);
+        }
+        .about-section {
+            background: #3c144a;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+        .about-section a {
+            width: 100%;
+        }
+        .about-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 3px solid #e04f92;
+        }
+        .about-heading {
+            color: #e04f92;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .about-content p, 
+        .about-content ul {
+            color: lavender;
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+        .about-column .btn {
+            display: inline-block;
+            background: #e04f92;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+        .about-column .btn:hover {
+            background: #ff6ab5;
+        }
+        .about-content ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .about-content ul li,
+        .about-content ul li a {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="../image/logo1.png" alt="Logo">
+            </a>
+            
+        </div>
+        <ul class="nav-links">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="calculate.html">Calculate</a></li>
+                <li><a href="reach-out.html">Reach Out</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="Footer.html"></a></li>
+            </ul>
+        </ul>
+    </nav>
+    <!-- About Section -->
+    <section id="about">
+        <h1>About</h1>
+        <h2>SELF CARE ISN'T SELFISH</h2>
+        <div class="about-content">
+            <p>Tracking your fitness is essential for a healthy lifestyle. Stay motivated with regular activities and monitor your progress.</p>
+            <div class="info-section">
+                <div class="info-block">
+                    <img src="../image/about water.webp" alt="Water Intake">
+                    <p>Ensure you drink enough water daily to stay hydrated.</p>
+                </div>
+                <div class="info-block">
+                    <img src="../image/calculate bmi.jpg" alt="BMI">
+                    <p>Keep track of your Body Mass Index for a balanced weight.</p>
+                </div>
+                <div class="info-block">
+                    <img src="../image/step-count.jpg" alt="Step Count">
+                    <p>Maintain an active lifestyle by walking a minimum of 10,000 steps daily.</p>
+                </div>
+            </div>
+        </div>
+        <!-- New Comprehensive About Columns -->
+        <section class="about-columns">
+            <!-- Column 1 -->
+            <div class="about-column">
+                <div class="about-section">
+                    <a href="../index.html">
+                        <img src="../image/overview.jpg" alt="Overview" class="about-img">
+                    </a>
+                    <h2 class="about-heading">Overview</h2>
+                    <div class="about-content">
+                        <p>Explore our website and discover how we help you achieve your fitness goals efficiently. Stay informed and motivated every step of the way!</p>
+                    </div>
+                </div>
+    
+                <div class="about-section">
+                    <a href="explore.html">
+                        <img src="../image/explore.jpg" alt="Explore" class="about-img">
+                    </a>
+                    <h2 class="about-heading">Explore</h2>
+                    <div class="about-content">
+                        <p>Guide yourself through various fitness tips, workout routines, and diet plans tailored to your needs.</p>
+                    </div>
+                </div>
+    
+                <div class="about-section">
+                    <a href="schedule.html">
+                        <img src="../image/training.jpg" alt="Training" class="about-img">
+                    </a>
+                    <h2 class="about-heading">Training</h2>
+                    <div class="about-content">
+                        <ul>
+                            <li>Classes</li>
+                            <li>Bootcamps</li>
+                            <li>Personalized Sessions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Column 2 -->
+            <div class="about-column">
+                <div class="about-section">
+                    <a href="calculate.html">
+                        <img src="../image/know.jpg" alt="Know Yourself" class="about-img">
+                    </a>
+                    <h2 class="about-heading">Know Yourself</h2>
+                    <div class="about-content">
+                        <ul>
+                            <li><a href="calculate.html" class="btn">BMI</a></li>
+                            <li><a href="calculate.html" class="btn">Step Count</a></li>
+                            <li><a href="calculate.html" class="btn">Calorie Count</a></li>
+                            <li><a href="calculate.html" class="btn">Nutrition Checker</a></li>
+                            <li><a href="calculate.html" class="btn">Stress Calculator</a></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="about-section">
+                    <a href="helpdesk.html">
+                        <img src="../image/doubts.jpg" alt="Doubts" class="about-img">
+                    </a>
+                    <h2 class="about-heading">Doubts</h2>
+                    <div class="about-content">
+                        <p>Get all your questions answered through our dedicated help desk.</p>
+                        <a href="helpdesk.html" class="btn">Get Your Doubts Cleared</a>
+                    </div>
+                </div>
+    
+                <div class="about-section">
+                    <a href="team.html">
+                        <img src="../image/experts.jpg" alt="Experts Team" class="about-img">
+                    </a>
+                    <h2 class="about-heading">Our Experts</h2>
+                    <div class="about-content">
+                        <p>Meet our qualified experts who are here to assist you on your fitness journey.</p>
+                        <a href="team.html" class="btn">View Our Team</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Column 3 -->
+            <div class="about-column">
+                <div class="about-section">
+                    <a href="reach.html">
+                        <img src="../image/rate.jpg" alt="Rate Us" class="about-img">
+                    </a>
+                    <h2 class="about-heading">Rate Us</h2>
+                    <div class="about-content">
+                        <a href="rate.html" class="btn">Rate Us</a>
+                    </div>
+                </div>
+    
+                <div class="about-section">
+                    <a href="reach.html">
+                        <img src="../image/login.jpg" alt="Login" class="about-img">
+                    </a>
+                    <h2 class="about-heading">Login</h2>
+                    <div class="about-content">
+                        <a href="login.html" class="btn">Login</a>
+                    </div>
+                </div>
+    
+                <div class="about-section">
+                    <a href="reach.html">
+                        <img src="../image/join.jpg" alt="Join Us" class="about-img">
+                    </a>
+                    <h2 class="about-heading">Join Us</h2>
+                    <div class="about-content">
+                        <a href="member-form.html" class="btn">Join Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- END About Section -->
+    </body>
+    </html>
